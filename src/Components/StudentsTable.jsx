@@ -1,168 +1,26 @@
-const students = [
-  {
-    id: 1,
-    name: "Rezaul",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 75,
-    class: "one",
-  },
-  {
-    id: 2,
-    name: "Rohim",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 85,
-    class: "one",
-  },
-  {
-    id: 3,
-    name: "Mashrafi",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 95,
-    class: "one",
-  },
-  {
-    id: 4,
-    name: "Mushfiq",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 98,
-    class: "one",
-  },
-  {
-    id: 5,
-    name: "Tamim",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 78,
-    class: "one",
-  },
-  {
-    id: 6,
-    name: "Nayem",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 65,
-    class: "one",
-  },
-  {
-    id: 7,
-    name: "Nafiz",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 46,
-    class: "one",
-  },
-  {
-    id: 8,
-    name: "Taskin",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 88,
-    class: "one",
-  },
-  {
-    id: 9,
-    name: "Forhad",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 49,
-    class: "one",
-  },
-  {
-    id: 10,
-    name: "Aftab",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 90,
-    class: "one",
-  },
-  {
-    id: 11,
-    name: "Aftab",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 90,
-    class: "two",
-  },
-  {
-    id: 12,
-    name: "Aftab",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 90,
-    class: "two",
-  },
-  {
-    id: 13,
-    name: "Aftab",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 90,
-    class: "two",
-  },
-  {
-    id: 14,
-    name: "Aftab",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 90,
-    class: "two",
-  },
-  {
-    id: 15,
-    name: "Aftab",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 90,
-    class: "two",
-  },
-  {
-    id: 16,
-    name: "Aftab",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 90,
-    class: "two",
-  },
-  {
-    id: 17,
-    name: "Aftab",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 90,
-    class: "two",
-  },
-  {
-    id: 18,
-    name: "Aftab",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 90,
-    class: "two",
-  },
-  {
-    id: 19,
-    name: "Aftab",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 90,
-    class: "two",
-  },
-  {
-    id: 20,
-    name: "Aftab",
-    image: "https://i.ibb.co/cTTKqNV/avatar.png",
-    marks: 90,
-    class: "two",
-  },
-];
 function StudentListItem({ students }) {
   const calcGrade = (marks) => {
     if (marks > 100 || marks < 0) {
       return "Invalid";
-    } else if (marks > 80 && marks < 100) {
+    } else if (marks >= 80 && marks <= 100) {
       return "A+";
-    } else if (marks > 70 && marks < 80) {
+    } else if (marks >= 70 && marks < 80) {
       return "A";
-    } else if (marks > 60 && marks < 70) {
+    } else if (marks >= 60 && marks < 70) {
       return "A-";
-    } else if (marks > 50 && marks < 60) {
+    } else if (marks >= 50 && marks < 60) {
       return "B";
-    } else if (marks > 40 && marks < 50) {
+    } else if (marks >= 40 && marks < 50) {
       return "C";
-    } else if (marks > 0 && marks < 40) {
+    } else if (marks >= 0 && marks < 40) {
       return "Fail";
     } else {
       return "Invalid";
     }
   };
-  const calcPercentage=(marks)=>{
-   return (marks/100)*100
-  }
+  const calcPercentage = (marks) => {
+    return (marks / 100) * 100;
+  };
   return students.map((student, index) => (
     <tr key={student.id} className="border-b border-[#7ECEB529]">
       <td className="p-5 text-sm md:text-xl">{index + 1}</td>
@@ -181,10 +39,156 @@ function StudentListItem({ students }) {
       <td className="p-5 text-sm md:text-xl text-center">
         {calcGrade(student.marks)}
       </td>
-      <td className="p-5 text-sm md:text-xl text-center">{calcPercentage(student.marks)} %</td>
+      <td className="p-5 text-sm md:text-xl text-center">
+        {calcPercentage(student.marks)} %
+      </td>
     </tr>
   ));
 }
+
+const students = [
+   {
+     id: 1,
+     name: "Rezaul",
+     image: "https://i.ibb.co/cTTKqNV/avatar.png",
+     marks: 79,
+     class: "one",
+   },
+   {
+     id: 2,
+     name: "Rohim",
+     image: "https://i.ibb.co/ssVFLjs/profile.png",
+     marks: 80,
+     class: "one",
+   },
+   {
+     id: 3,
+     name: "Mashrafi",
+     image: "https://i.ibb.co/cTTKqNV/avatar.png",
+     marks: 95,
+     class: "one",
+   },
+   {
+     id: 4,
+     name: "Mushfiq",
+     image: "https://i.ibb.co/ssVFLjs/profile.png",
+     marks: 98,
+     class: "one",
+   },
+   {
+     id: 5,
+     name: "Tamim",
+     image: "https://i.ibb.co/cTTKqNV/avatar.png",
+     marks: 78,
+     class: "one",
+   },
+   {
+     id: 6,
+     name: "Nayem",
+     image: "https://i.ibb.co/ssVFLjs/profile.png",
+     marks: 65,
+     class: "one",
+   },
+   {
+     id: 7,
+     name: "Nafiz",
+     image: "https://i.ibb.co/cTTKqNV/avatar.png",
+     marks: 46,
+     class: "one",
+   },
+   {
+     id: 8,
+     name: "Taskin",
+     image: "https://i.ibb.co/cTTKqNV/avatar.png",
+     marks: 88,
+     class: "one",
+   },
+   {
+     id: 9,
+     name: "Forhad",
+     image: "https://i.ibb.co/ssVFLjs/profile.png",
+     marks: 49,
+     class: "one",
+   },
+   {
+     id: 10,
+     name: "Aftab",
+     image: "https://i.ibb.co/cTTKqNV/avatar.png",
+     marks: 90,
+     class: "one",
+   },
+   {
+     id: 11,
+     name: "Mustafizz",
+     image: "https://i.ibb.co/cTTKqNV/avatar.png",
+     marks: 97,
+     class: "two",
+   },
+   {
+     id: 12,
+     name: "Rofiq",
+     image: "https://i.ibb.co/cTTKqNV/avatar.png",
+     marks:61,
+     class: "two",
+   },
+   {
+     id: 13,
+     name: "Ashraful",
+     image: "https://i.ibb.co/ssVFLjs/profile.png",
+     marks: 87,
+     class: "two",
+   },
+   {
+     id: 14,
+     name: "Tanjim",
+     image: "https://i.ibb.co/cTTKqNV/avatar.png",
+     marks: 67,
+     class: "two",
+   },
+   {
+     id: 15,
+     name: "Liton",
+     image: "https://i.ibb.co/cTTKqNV/avatar.png",
+     marks: 73,
+     class: "two",
+   },
+   {
+     id: 16,
+     name: "Soummo",
+     image: "https://i.ibb.co/ssVFLjs/profile.png",
+     marks: 44,
+     class: "two",
+   },
+   {
+     id: 17,
+     name: "Iqbal",
+     image: "https://i.ibb.co/cTTKqNV/avatar.png",
+     marks: 91,
+     class: "two",
+   },
+   {
+     id: 18,
+     name: "Rofiq",
+     image: "https://i.ibb.co/cTTKqNV/avatar.png",
+     marks: 0,
+     class: "two",
+   },
+   {
+     id: 19,
+     name: "Pilot",
+     image: "https://i.ibb.co/ssVFLjs/profile.png",
+     marks: 186,
+     class: "two",
+   },
+   {
+     id: 20,
+     name: "Nannu",
+     image: "https://i.ibb.co/cTTKqNV/avatar.png",
+     marks: 30,
+     class: "two",
+   },
+ ];
+
 export default function StudentsTable() {
   const classOneStudents = students.filter(
     (student) => student.class === "one"

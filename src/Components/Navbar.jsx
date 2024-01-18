@@ -1,7 +1,8 @@
 import logo from "../assets/lws-logo-en.svg";
 export default function Navbar(){
    return (
-      <nav className="py-6">
+      <header>
+        <nav className="py-6">
         <div className="container mx-auto flex items-center justify-between gap-x-6">
           {/* Logo */}
           <a href="/">
@@ -13,5 +14,6 @@ export default function Navbar(){
           </a>
         </div>
       </nav>
+      </header>
    );
 }
